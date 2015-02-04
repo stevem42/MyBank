@@ -1,9 +1,11 @@
 package steve.mybank;
 
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,6 +27,23 @@ public class MainActivity extends ActionBarActivity {
         depositButton = (Button)findViewById(R.id.deposit_button);
         withdrawButton = (Button)findViewById(R.id.withdraw_button);
         amountInput = (EditText)findViewById(R.id.amount_input);
+
+        withdrawButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String amount = amountInput.getText().toString();
+                amountDisplay.setText(amount);
+            }
+
+        });
+
+        depositButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String amount = amountInput.getText().toString();
+                amountDisplay.setText(amount);
+            }
+        });
 
     }
 
